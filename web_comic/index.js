@@ -3,7 +3,7 @@
 //const {
   //logErrors,
   //errorHandler,
- // boomErrorHandler,
+  //boomErrorHandler,
 //} = require('./middlewares/error.handler');
 //const app = express();
 //const port = 3000;
@@ -17,9 +17,8 @@
 //app.use(logErrors);
 //app.use(boomErrorHandler);
 //app.use(errorHandler);
-// eslint-disable-next-line no-console
+// eslint-disable-next-line no-console este siempre estuvo comentado
 //app.listen(port, () => console.log('Mi puerto', port));
-
 
 
 const express = require('express');
@@ -45,7 +44,7 @@ app.use(
     { extended: false } // permite codificar matrices y objetos enriquecidos en formato codificado en url
   )
 ); //Selección de tipo de analisis de datos
-//app.use(express.static('app/storage')); //Sacarlos Recursos estaticos de esta carpeta
+app.use(express.static('app/storage')); //Sacarlos Recursos estaticos de esta carpeta
 
 routerApi(app);
 app.use(logErrors); //El orden de los use es imPORTante
@@ -56,3 +55,4 @@ app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log('Mi PORT' + PORT);
 });
+

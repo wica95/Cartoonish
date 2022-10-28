@@ -3,17 +3,17 @@ const boom = require('@hapi/boom');
 const { validateData, NOTFOUND, CONFLICT } = require('./../utils');
 class CommentService {
   constructor() {
-    this.coments = [];
+    this.coment = [];
     this.generate();
   }
 
   generate() {
     const limit = 50;
     for (let index = 0; index < limit; index++) {
-      this.coments.push({
+      this.coment.push({
         isActive: faker.datatype.boolean(),
         id: faker.datatype.uuid(),
-        texto: faker.commerce.productName(),
+        coment: faker.commerce.productName(),
 
       });
     }
@@ -25,16 +25,16 @@ class CommentService {
       id: faker.datatype.uuid(),
       ...data,
     };
-    this.coments.push(newComent);
+    this.coment.push(newComent);
     return newComent;
   }
 
   find(limit) {
     return new Promise((resolve, rejected) => {
 
-        var coments = this.coments.slice(0, limit);
-        if (coments.length > 0) {
-          resolve(coments);
+        var coment = this.coment.slice(0, limit);
+        if (coment.length > 0) {
+          resolve(coment);
         } else {
           rejected('');
         }
@@ -42,61 +42,61 @@ class CommentService {
 
   }
 
-  findActiveComents() {
+  findActiveComent() {
     return new Promise((resolve) => {
       setTimeout(() => {
-        const activeComents = this.coments.filter((x) => x.isActive === true);
-        resolve(activeComents);
+        const activeComent = this.coment.filter((x) => x.isActive === true);
+        resolve(activeComent);
       }, 2000);
     });
   }
 
   async findOne(id) {
     //const name = this.getTotal(); PRUEBA DE ERROR DE TRY Y CATCH
-    const coment = this.coments.find((item) => item.id === id);
+    const coments = this.coment.find((item) => item.id === id);
     //NOT FOUND
-    validateData(coment, NOTFOUND, 'No encontrado', (data) => !data);
+    validateData(coments, NOTFOUND, 'No encontrado', (data) => !data);
     validateData(
-      coment,
+      coments,
       CONFLICT,
       'CONFLICTO, el comentario esta bloqueado.',
       (data) => data.isActive == false
     );
-    return coment;
+    return coments;
   }
   async update(id, changes) {
-    const index = this.coments.findIndex((item) => item.id === id);
+    const index = this.coment.findIndex((item) => item.id === id);
 
     if (index === -1) throw boom.notFound('Comentario no encontrado');
     //throw new Error('Product not found'); Forma tradicional
 
-    var currentComent = this.coments[index];
-    this.coments[index] = {
+    var currentComent = this.coment[index];
+    this.coment[index] = {
       ...currentComent,
       ...changes,
     };
-    return this.coments[index];
+    return this.coment[index];
   }
   async updateComplete(id, changes) {
-    const index = this.coments.findIndex((item) => item.id === id);
+    const index = this.coment.findIndex((item) => item.id === id);
 
     if (index === -1) throw boom.notFound('Comentario no encontrado');
     //throw new Error('Product not found'); Forma tradicional
 
-    var currentComent = this.coments[index];
-    this.coments[index] = {
+    var currentComent = this.coment[index];
+    this.coment[index] = {
       id: currentComent.id,
       ...changes,
     };
-    return this.coments[index];
+    return this.coment[index];
   }
 
   async delete(id) {
-    const index = this.coments.findIndex((item) => item.id == id);
+    const index = this.coment.findIndex((item) => item.id == id);
     if (index === -1) {
       if (index === -1) throw boom.notFound('Comentario no encontrado');
     }
-    this.coments.splice(index, 1);
+    this.coment.splice(index, 1);
     return {
       message: 'Eliminado',
       id,
