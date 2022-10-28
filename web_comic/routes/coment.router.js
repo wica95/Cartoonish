@@ -38,9 +38,7 @@ router.get(
 );
 router.post(
   '/',
-  //validatorHandler(createComentDto, 'body'),
-  //ERROR EN EL VALIDATOR HANDLE AL INTENTAR CREAR UN COMENTARIO--
-  //SIGUE SIN CREARSE COMENTARIO AUNQUE DIGA QUE SI LO ESTA HACIENTO
+  validatorHandler(createComentDto, 'body'),
   async (req, res, next) => {
     const body = req.body;
     try {
@@ -87,10 +85,10 @@ router.put(
     try {
       const { id } = req.params;
       const body = req.body;
-      const coments = await service.updateComplete(id, body);
+      const coment = await service.updateComplete(id, body);
       res.json({
         message: 'update total',
-        data: coments,
+        data: coment,
         id,
       });
     } catch (error) {
