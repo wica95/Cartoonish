@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Navbar() {
   return (
     <div><nav className="navbar navbar-expand-lg bg-light">
@@ -12,7 +13,7 @@ export default function Navbar() {
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
+          </li> 
           <li className="nav-item">
             <a className="nav-link" href="#">Link</a>
           </li>
@@ -25,6 +26,7 @@ export default function Navbar() {
               <li><a className="dropdown-item" href="#">Another action</a></li>
               <li><hr className="dropdown-divider"/></li>
               <li><a className="dropdown-item" href="#">Something else here</a></li>
+              
             </ul>
           </li>
           <li className="nav-item">
