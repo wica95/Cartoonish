@@ -1,0 +1,18 @@
+.container{
+    width: 100%;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding-left: 200px; 
+}
+
+.h{
+    color: white;
+}
+.h:hover{
+    color: aqua;
+}
+.barra{
+    padding-bottom: 75px;
+    padding-top: 30px;
+}

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import "../css/Footer.css";
 
@@ -11,7 +12,7 @@ export default function Footer() {
             <div className="box">
                 <figure>
                     <a href="#">
-                    <img classNameName="imagen-footer" src={require("../img/essr.jpg")}  />
+                   
                     </a>
                 </figure>
             </div>

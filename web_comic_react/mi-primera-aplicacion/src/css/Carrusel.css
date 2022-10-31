@@ -1,13 +1,13 @@
-
 .imagen-carrusel{
 
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    width: 80%;
+    width: 1000px;
+    height:600px ;
     margin-bottom: 30px;
     margin-top: 10px;
-    float: middle;
+ 
 
 }
