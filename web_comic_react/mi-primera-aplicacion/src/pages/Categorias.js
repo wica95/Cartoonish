@@ -1,20 +1,22 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carta from './components/Carta';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Genero from '../components/M_genero/Genero';
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import Footer from '../components/Footer';
+import Carta from '../components/Carta';
+import Genero from './../components/Genero';
+
+export default function Categorias() {
   return (
-    <div className="App">    
-      
-      <Navbar/>
-    <Genero/>   
-      <Carta/>
-      <Footer/> 
-    </div>
-  );
+
+    <React.Fragment>
+        <section>
+    
+
+   <Genero/>
+    <Carta/>
+    <Footer/>
+    </section>
+    </React.Fragment>
+  )
 }
 
-export default App;

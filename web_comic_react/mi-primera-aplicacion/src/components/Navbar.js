@@ -1,42 +1,24 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+import "../css/Navbar.css";
 
-
-export default function Navbar() {
+const Navbar = () => {
+  const activeLink = 'bg-blue-100 text-black'
+  const normalLink = ''
   return (
-  <nav className="navbar navbar-expand-lg bg-light">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">Weebtoon</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Tus publicaciones</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Genero
-          </a>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Terror</a></li>
-            <li><a className="dropdown-item" href="#">Drama</a></li>
-             <li><hr className="dropdown-divider"/></li> 
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-   
-      </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <React.Fragment>
+      <ul>
+    <div >
+     <NavLink  to= '/' > <li> <a>Home </a>  </li></NavLink>   
+      <NavLink  to= '/Tuspublicaciones' > <li> <a>  Tus Publicaciones </a></li> </NavLink>
+      <NavLink  to= '/Categorias'  > <li>  <a>  Categorias</a> </li> </NavLink>
+      <NavLink  to= '/Registrarse'  > <li>  <a>  No tienes cuenta?</a> </li> </NavLink>
+      <NavLink  to= '/Ingresar'  > <li>  <a>  Iniciar Sesion</a> </li> </NavLink>
     </div>
-  </div>
-</nav>
+  
+    </ul>
+    </React.Fragment>
   )
 }
+
+export default Navbar

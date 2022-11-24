@@ -1,28 +1,9 @@
 
-/*import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carta from './components/Carta';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
-function App() {
-  return (
-    <div className="App">    
-      
-      <Navbar/>
-      <Carta/> 
-    </div>
-  );
-}
-
-export default App;
-*/
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import React from 'react';
 //import Carta from './components/Carta';
 //import Carrusel from './components/Carrusel';
 //import Genero from './components/Genero';
@@ -31,18 +12,27 @@ import Publicar from './components/Publicar';
 import Publicacion from './components/Publicacion';
 //import Formulario_R from './components/Formulario_R';
 //import Login from './components/Login';
+import Home from './pages/Home';
+import MainPage from './components/MainPage';
+
+
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">    
-      
-               
-      <Navbar/> 
-      <Publicacion/> 
-      <Footer/> 
+ 
+      <React.Fragment>
+       <BrowserRouter>
 
+      <MainPage/> 
+
+
+      </BrowserRouter>
+
+      </React.Fragment>
       
-    </div>
+  
   );
 }
 

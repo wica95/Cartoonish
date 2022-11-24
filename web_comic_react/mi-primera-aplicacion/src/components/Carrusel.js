@@ -15,21 +15,21 @@ export default function Carrusel() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                    <img className="imagen-carrusel" src={require("../img/Bleach.png")} alt= "foto de Berserk" />
+                    <img className="imagen-carrusel" src={require("../img/monster.jpg")} alt= "foto de Berserk" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Nuevo Manga</h5>
                             <p>Monster</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                    <img className="imagen-carrusel" src={require("../img/berserk.jpg")} alt= "foto de Berserk" />
+                    <img className="imagen-carrusel" src={require("../img/vinland.jpg")} alt= "foto de Berserk" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Manga popular</h5>
                             <p>Vinland Saga</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                    <img className="imagen-carrusel" src={require("../img/berserk.jpg")} alt= "foto de Berserk" />
+                    <img className="imagen-carrusel" src={require("../img/black.jpg")} alt= "foto de Berserk" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Manga </h5>
                             <p>Black Lagoon</p>
